@@ -8,34 +8,34 @@
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner /Google Colab
 
 ## Related Theory Concept:
-The receiver operating characteristic (ROC) curve is frequently used for evaluating the performance of binary classification algorithms. It provides a graphical representation of a classifier’s performance, rather than a single value like most other metrics. First, let’s establish that in binary classification, there are four possible outcomes for a test prediction: true positive, false positive, true negative, and false negative. The ROC curve is produced by calculating and plotting the true positive rate against the false positive rate for a single classifier at a variety of thresholds.
+The receiver operating characteristic (ROC) curve is frequently used for evaluating the performance of binary classification algorithms. It provides a graphical representation of a classifier’s performance, rather than a single value like most other metrics.
+First, let’s establish that in binary classification, there are four possible outcomes for a test prediction: true positive, false positive, true negative, and false negative.
+The ROC curve is produced by calculating and plotting the true positive rate against the false positive rate for a single classifier at a variety of thresholds.
 
-Uses of ROC Curve :
+#### Uses of ROC Curve :
+One advantage presented by ROC curves is that they aid us in finding a classification threshold that suits our specific problem.
 
-1.One advantage presented by ROC curves is that they aid us in finding a classification threshold that suits our specific problem.
-
-2.On the other hand, if our classifier is predicting whether someone has a terminal illness, we might be ok with a higher number of false positives (incorrectly diagnosing the illness), just to make sure that we don’t miss any true positives (people who actually have the illness).
+On the other hand, if our classifier is predicting whether someone has a terminal illness, we might be ok with a higher number of false positives (incorrectly diagnosing the illness), just to make sure that we don’t miss any true positives (people who actually have the illness).
 
 ## Algorithm
-1.Import Necessary packages
+1. Import Necessary Packages
+2. Load the Data
+3. Create Training and Test Samples
+4. Fit the Logistic Regression Model
+5. Model Diagnostics
 
-2.Load the data
-
-3.Create Training and Test Samples
-
-4.Fit the Logistic Regression Model
-
-5.Model Diagnostics
+<br/>
+<br/>
 
 ## Program:
-
+```
+/*
 Program to plot Receiver Operating Characteristic [ROC] Curve.
-```
 Developed by   : Vigneshwar S
-
-RegisterNumber : 212220230058
+RegisterNumber :  212220230058
+*/
 ```
-```python3
+```python
 import pandas as pd
 import numpy as np
 from sklearn import metrics 
@@ -68,19 +68,22 @@ y_pred_proba=log_regression.predict_proba(x_test)[::,1]
 fpr,tpr, _ = metrics.roc_curve(y_test,y_pred_proba)
 auc = metrics.roc_auc_score(y_test,y_pred_proba)
 
-
 plt.plot(fpr,tpr, label="AUC" + str(auc))
 plt.ylabel("True Positive Rate")
 plt.xlabel("False Positive Rate")
 plt.legend(loc=4)
-
-
-plt.show() 
+plt.show()
 ```
 
-## Output:
-![exp7](https://user-images.githubusercontent.com/78891075/168831967-6778d91f-c59a-433e-977a-7fc5f3161cc7.png)
+<br/>
+<br/>
+<br/>
+<br/>
 
+
+## Output:
+
+![Capture10](https://user-images.githubusercontent.com/75234588/169309175-2ea6dd11-6b47-4e22-9358-4cae656c3bf3.PNG)
 
 
 ## Result:
